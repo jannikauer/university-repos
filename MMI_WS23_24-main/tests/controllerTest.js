@@ -38,20 +38,20 @@ describe('auxiliaryAPI', function() {
 
 
 	describe('getGreetingDependOnTime', function() {
-	  it('should return "Guten Morgen" for any time before 06:00', function() {
-		const date = new Date('2020-01-01 05:59');
-		expect(apiTemperature.getGreetingDependOnTime(date)).to.equal('Guten Morgen');
-	  });
+    it('should return "Guten Morgen" for any time before 06:00', function() {
+        const date = new Date('2020-01-01 05:59');
+        expect(apiTemperature.getGreetingDependOnTime(date)).to.equal('Guten Morgen');
+    });
 
-	  it('should return "Guten Abend" for any time between 06:00 and 22:00', function() {
-		const date = new Date('2020-01-01 12:00');
-		expect(apiTemperature.getGreetingDependOnTime(date)).to.equal('Guten Abend');
-	  });
+    it('should return "Guten Mittag" for any time between 06:00 and 22:00', function() {
+        const date = new Date('2020-01-01 12:00');
+        expect(apiTemperature.getGreetingDependOnTime(date)).to.equal('Guten Mittag');
+    });
 
-	  it('should return "Guten Morgen" for any time after 22:00', function() {
-		const date = new Date('2020-01-01 22:01');
-		expect(apiTemperature.getGreetingDependOnTime(date)).to.equal('Guten Morgen');
-	  });
-	});
+    it('should return "Guten Abend" for any time after 22:00', function() {
+        const date = new Date('2020-01-01 22:01');
+        expect(apiTemperature.getGreetingDependOnTime(date)).to.equal('Guten Abend');
+    });
+});
 });
 
